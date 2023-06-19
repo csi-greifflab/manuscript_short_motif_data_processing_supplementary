@@ -1,1 +1,12 @@
-# manuscript_short_motif_data_processing_supplementary
+## Prerequisites
+- PEAR
+- igfold
+- pyrosetta
+- abnumber
+- pandas
+- ...
+
+## Run the pipeline
+```shell
+snakemake -c <n_jobs>
+```
