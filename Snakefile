@@ -1,4 +1,4 @@
-import os 
+import os
 
 
 DATA_DIR = 'data'
@@ -9,7 +9,9 @@ IGFOLD_DIR = os.path.join(WORK_DIR, 'igfold')
 N_CPU_IGFOLD = 4
 
 samples = {
-    'high': ('1_small.R1.fastq.gz', '1_small.R2.fastq.gz'),
+    'high': ('path/to/high/binders_R1.fastq.gz', 'path/to/high/binders_R1.fastq.gz'),
+    'medium': ('path/to/medium/binders_R1.fastq.gz', 'path/to/medium/binders_R1.fastq.gz'),
+    'low': ('path/to/low/binders_R1.fastq.gz', 'path/to/low/binders_R1.fastq.gz'),
 }
 
 
@@ -20,7 +22,6 @@ def get_reads(sample, i):
 rule all:
     input:
         'count_unique_cdr3s.out',
-        # expand(os.path.join(REFINED_UNIQUE_CDR3_DIR, '{sample}_unique_cdr3s_fv.csv'), sample=samples),
         expand(os.path.join(IGFOLD_DIR, '{sample}'), sample=samples),
 
 
@@ -40,7 +41,7 @@ rule merge_reads:
     output:
         os.path.join(WORK_DIR, '{sample}_merged.assembled.fastq')
     shell:
-        f'mkdir -p {UNIQUE_CDR3_DIR} && ' 
+        f'mkdir -p {UNIQUE_CDR3_DIR} && '
         'pear -f {input.r1} -r {input.r2} -o ' + os.path.join(WORK_DIR, '{wildcards.sample}_merged')
 
 
