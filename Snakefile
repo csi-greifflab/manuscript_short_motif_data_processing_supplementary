@@ -9,9 +9,9 @@ IGFOLD_DIR = os.path.join(WORK_DIR, 'igfold')
 N_CPU_IGFOLD = 4
 
 samples = {
-    'high': ('path/to/high/binders_R1.fastq.gz', 'path/to/high/binders_R1.fastq.gz'),
-    'medium': ('path/to/medium/binders_R1.fastq.gz', 'path/to/medium/binders_R1.fastq.gz'),
-    'low': ('path/to/low/binders_R1.fastq.gz', 'path/to/low/binders_R1.fastq.gz'),
+    'high': ('path/to/high/binders_R1.fastq.gz', 'path/to/high/binders_R2.fastq.gz'),
+    'medium': ('path/to/medium/binders_R1.fastq.gz', 'path/to/medium/binders_R2.fastq.gz'),
+    'low': ('path/to/low/binders_R1.fastq.gz', 'path/to/low/binders_R2.fastq.gz'),
 }
 
 
