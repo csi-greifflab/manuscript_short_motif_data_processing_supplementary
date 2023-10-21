@@ -100,10 +100,6 @@ int main(int argc, char** argv) {
             if (i != 1) {
                 continue;
             }
-            if (line_id > 1000000) {
-                cont = false;
-                break;
-            }
             if (line_id % 1000000 == 0) {
                 std::cout << line_id / 1000000 << std::endl;
             }
